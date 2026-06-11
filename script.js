@@ -1,50 +1,59 @@
-// Função para alternar entre as páginas do site
-function mudarPagina(idPagina) {
-    // Esconde todas as páginas
-    const paginas = document.querySelectorAll('.pagina');
-    paginas.forEach(p => p.classList.remove('active'));
+// Array que vai guardar os produtos que o usuário adicionar
+let carrinho = [];
+let total = 0;
 
-    // Remove a classe ativa de todos os links do menu
-    const links = document.querySelectorAll('.nav-link');
-    links.forEach(l => l.classList.remove('active'));
-
-    // Mostra a página selecionada
-    document.getElementById(`pag-${idPagina}`).classList.add('active');
-
-    // Destaca o link clicado no menu
-    event.currentTarget.classList.add('active');
+// Função para adicionar itens ao resumo
+function adicionarAoCarrinho(nomeProduto, precoProduto) {
+    // Adiciona o produto ao array do carrinho
+    carrinho.push({ nome: nomeProduto, preco: precoProduto });
+    
+    // Atualiza o valor total
+    total += precoProduto;
+    
+    // Atualiza a tela
+    atualizarInterfaceCarrinho();
 }
 
-// Lógica do Simulador da Plantação de Uvas
-function simular栽培() {
-    const opcao = document.getElementById('irrigacao').value;
-    const resultadoBox = document.getElementById('resultado');
-    const pProducao = document.getElementById('res-producao');
-    const pAmbiente = document.getElementById('res-ambiente');
-    const badge = document.getElementById('status-equilibrio');
-
-    // Revela a caixinha de resultado
-    resultadoBox.classList.remove('hidden');
-
-    // Limpa classes anteriores do badge
-    badge.className = "badge";
-
-    if (opcao === 'gotejamento') {
-        pProducao.innerHTML = "<strong>🍇 Produção:</strong> Alta qualidade! As uvas recebem a quantidade ideal de água diretamente nas raízes, aumentando os açúcares naturais (grau brix) ideais para consumo e sucos.";
-        pAmbiente.innerHTML = "<strong>🌱 Meio Ambiente:</strong> Economia de até 60% de água. Reduz a proliferação de fungos nas folhas e evita a erosão do solo.";
-        badge.innerText = "Equilíbrio Perfeito! ⭐⭐⭐";
-        badge.classList.add('sucesso');
-        
-    } else if (opcao === 'aspersao') {
-        pProducao.innerHTML = "<strong>🍇 Produção:</strong> Boa quantidade, mas o excesso de umidade nas folhas pode atrair doenças que estragam os cachos de uva.";
-        pAmbiente.innerHTML = "<strong>🌱 Meio Ambiente:</strong> Desperdício médio de água por evaporação. Risco moderado de compactação do solo devido ao impacto das gotas.";
-        badge.innerText = "Produção Forte, mas falta Sustentabilidade ⚠️";
-        badge.classList.add('alerta');
-        
-    } else if (opcao === 'manual') {
-        pProducao.innerHTML = "<strong>🍇 Produção:</strong> Irregular. Algumas fileiras de videiras ficam encharcadas e outras secas, gerando uvas de tamanhos desiguais.";
-        pAmbiente.innerHTML = "<strong>🌱 Meio Ambiente:</strong> Altíssimo desperdício de água. Causa lavagem de nutrientes do solo (lixiviação) e exige mais fertilizantes químicos depois.";
-        badge.innerText = "Desequilíbrio Crítico ❌";
-        badge.classList.add('perigo');
+// Função para atualizar a lista na tela
+function atualizarInterfaceCarrinho() {
+    const listaHtml = document.getElementById('itens-carrinho');
+    const precoTotalHtml = document.getElementById('total-preco');
+    
+    // Limpa a lista atual
+    listaHtml.innerHTML = '';
+    
+    if (carrinho.length === 0) {
+        listaHtml.innerHTML = '<li class="vazio">Nenhum item selecionado.</li>';
+    } else {
+        // Passa por cada item do carrinho e cria a linha HTML
+        carrinho.forEach((item) => {
+            const li = document.createElement('li');
+            li.innerHTML = `<span>🍇 ${item.nome}</span> <span>R$ ${item.preco.toFixed(2)}</span>`;
+            listaHtml.appendChild(li);
+        });
     }
+    
+    // Atualiza o preço total formatado
+    precoTotalHtml.innerText = total.toFixed(2).replace('.', ',');
+}
+
+// Função que simula a finalização gerando uma mensagem de WhatsApp
+function finalizarPedido() {
+    if (carrinho.length === 0) {
+        alert("Seu carrinho está vazio! Selecione alguma uva antes de finalizar.");
+        return;
+    }
+    
+    // Monta o texto da mensagem
+    let mensagem = "Olá! Gostaria de encomendar as seguintes caixas de uva:\n\n";
+    carrinho.forEach(item => {
+        mensagem += `- ${item.nome} (R$ ${item.preco.toFixed(2)})\n`;
+    });
+    mensagem += `\n*Total do Pedido: R$ ${total.toFixed(2)}*`;
+    
+    // Codifica o texto para formato de URL
+    const mensagemCodificada = encodeURIComponent(mensagem);
+    
+    // Abre uma nova aba simulando o envio para um WhatsApp fictício (ex: 5511999999999)
+    window.open(`https://wa.me/5511999999999?text=${mensagemCodificada}`, '_blank');
 }
