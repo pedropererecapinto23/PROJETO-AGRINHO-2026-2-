@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grapetech - Futuro Sustentável</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">🍇 GrapeTech</div>
+        <nav>
+            <a href="#" class="nav-link active" onclick="mudarPagina('simulador')">Simulador</a>
+            <a href="#" class="nav-link" onclick="mudarPagina('agrinho')">O Concurso</a>
+            <a href="#" class="nav-link" onclick="mudarPagina('sobre')">Sobre Mim</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        
+        <section id="pag-simulador" class="pagina active">
+            <h2>Simulador de Viticultura Sustentável</h2>
+            <p>Escolha um método de irrigação para a nossa plantação de uvas e veja o equilíbrio entre a produção e o impacto ambiental.</p>
+            
+            <div class="simulador-box">
+                <label for="irrigacao">Selecione o Sistema de Irrigação:</label>
+                <select id="irrigacao">
+                    <option value="aspersao">Aspersão Tradicional (Chuveiro)</option>
+                    <option value="gotejamento">Gotejamento Monitorado (Sustentável)</option>
+                    <option value="manual">Manual / Sulcos de Inundação</option>
+                </select>
+                <button onclick="simular栽培()">Analisar Impacto</button>
+            </div>
+
+            <div id="resultado" class="resultado-box hidden">
+                <h3>Relatório de Sustentabilidade</h3>
+                <p id="res-producao"></p>
+                <p id="res-ambiente"></p>
+                <div id="status-equilibrio" class="badge"></div>
+            </div>
+        </section>
+
+        <section id="pag-agrinho" class="pagina">
+            <h2>Concurso Agrinho 2026</h2>
+            <p class="destaque">"Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente."</p>
+            
+            <div class="conteudo-agrinho">
+                <img src="agrinho.jpg" alt="Logotipo do Concurso Agrinho 2026" class="img-agrinho">
+                
+                <p>O Concurso Agrinho é uma iniciativa essencial para conectar a educação de jovens com a realidade do campo. Em 2026, o tema nos desafia a pensar em como a tecnologia e as boas práticas agrícolas podem garantir que o Brasil continue sendo uma potência na produção de alimentos, mas sem esgotar os recursos naturais.</p>
+                <p>Este site é a minha contribuição para mostrar que a tecnologia (como este simulador) pode ajudar o produtor de uvas a tomar decisões mais ecológicas e lucrativas.</p>
+            </div>
+        </section>
+
+        <section id="pag-sobre" class="pagina">
+            <h2>Sobre o Desenvolvedor</h2>
+            <div class="perfil">
+                <p>Olá! Meu nome é <strong>[Seu Nome Aqui]</strong>, sou estudante do 3º ano do Ensino Médio.</p>
+                <p>Desenvolvi este projeto combinando conhecimentos de programação web (HTML, CSS e JavaScript) com pesquisas sobre a cultura da uva e sustentabilidade no manejo agrícola.</p>
+                <blockquote>"O futuro do planeta depende do equilíbrio que construímos hoje no campo."</blockquote>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Projeto Agrinho: Agro Forte, Futuro Sustentável.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

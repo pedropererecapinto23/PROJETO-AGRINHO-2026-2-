@@ -1,0 +1,179 @@
+/* Configurações Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f7f5;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Cabeçalho e Menu */
+header {
+    background-color: #4a154b; /* Roxo Uva */
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav a {
+    color: #e0e0e0;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover, nav a.active {
+    color: #5cb85c; /* Verde Sustentável */
+    border-bottom: 2px solid #5cb85c;
+}
+
+/* Conteúdo Principal */
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    flex: 1;
+}
+
+/* Controle de Páginas (Esconder/Mostrar) */
+.pagina {
+    display: none;
+}
+
+.pagina.active {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+h2 {
+    color: #4a154b;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #5cb85c;
+    padding-bottom: 5px;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Simulador */
+.simulador-box {
+    background: #eef7ee;
+    padding: 20px;
+    border-radius: 6px;
+    border-left: 5px solid #5cb85c;
+    margin-bottom: 20px;
+}
+
+select, button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+button {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+
+/* Resultados */
+.resultado-box {
+    background: #fdfdfd;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 6px;
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.badge {
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: white;
+}
+
+.sucesso { background-color: #5cb85c; }
+.alerta { background-color: #f0ad4e; }
+.perigo { background-color: #d9534f; }
+
+/* Página do Agrinho */
+.destaque {
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #555;
+    text-align: center;
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.img-agrinho {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Página Sobre Mim */
+blockquote {
+    border-left: 4px solid #4a154b;
+    padding-left: 15px;
+    font-style: italic;
+    color: #666;
+    margin-top: 20px;
+}
+
+/* Rodapé */
+footer {
+    background: #333;
+    color: #ccc;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+/* Animação suave */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
