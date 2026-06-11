@@ -3,91 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fazenda Videira D'Ouro | Plantação e Colheita</title>
+    <title>Fazenda Villa das Videiras | Cultivo de Uvas Premium</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <div class="logo">🍇 Fazenda Videira D'Ouro</div>
-        <nav>
-            <ul>
-                <li><a href="#fazenda">A Fazenda</a></li>
-                <li><a href="#colheita">A Colheita</a></li>
-                <li><a href="#vendas">Nossas Uvas</a></li>
-            </ul>
-        </nav>
+        <div class="container navbar">
+            <div class="logo">
+                🍇 <span>Villa das Videiras</span>
+            </div>
+            <nav>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#plantacao">Plantação</a></li>
+                    <li><a href="#colheita">Colheita</a></li>
+                    <li><a href="#vendas">Nossas Uvas</a></li>
+                    <li><a href="#contato" class="btn-contato">Contato</a></li>
+                </ul>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
     </header>
 
-    <section class="banner">
-        <div class="banner-text">
-            <h1>Do Cultivo ao Seu Copo</h1>
-            <p>Tradição, amor e a melhor qualidade em uvas selecionadas.</p>
-            <a href="#vendas" class="btn">Conhecer Produtos</a>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Do Nosso Sol para a Sua Mesa</h1>
+            <p>Cultivando com amor, colhendo com tradição. Conheça as uvas mais doces e selecionadas da região.</p>
+            <a href="#vendas" class="btn-primary">Ver Produtos</a>
         </div>
     </section>
 
-    <section id="fazenda" class="container">
-        <h2>Nossa Plantação</h2>
-        <div class="content-flex">
-            <div class="text-box">
-                <p>Localizada em uma região com clima e solo privilegiados, a <strong>Fazenda Videira D'Ouro</strong> dedica-se ao cultivo sustentável de videiras há mais de três décadas.</p>
-                <p>Cuidamos de cada videira com técnicas que misturam a tradição artesanal com a tecnologia agrícola moderna, garantindo que a planta receba os nutrientes e a irrigação perfeita para gerar frutos doces e encorpados.</p>
+    <section id="plantacao" class="section-padding">
+        <div class="container grid-2">
+            <div class="text-content">
+                <span class="subtitle">O CULTIVO</span>
+                <h2>Nossa Plantação, Nosso Orgulho</h2>
+                <p>Na Villa das Videiras, combinamos a riqueza do solo com técnicas de agricultura sustentável. Cuidamos de cada videira individualmente, garantindo o controle ideal de irrigação e exposição solar para que os frutos desenvolvam seu sabor máximo.</p>
+                <p>Cultivamos variedades finas de mesa e uvas destinadas à produção dos melhores vinhos e sucos artesanais.</p>
             </div>
-            <div class="image-placeholder bg-plantacao"></div>
+            <div class="image-placeholder bg-plantacao">
+                <span>🌱 Solo Rico & Sustentabilidade</span>
+            </div>
         </div>
     </section>
 
-    <section id="colheita" class="bg-light">
-        <div class="container">
-            <h2>A Colheita (Vindima)</h2>
-            <div class="content-flex reverse">
-                <div class="text-box">
-                    <p>A colheita, também conhecida como vindima, é o momento mais mágico do nosso ano. Ela acontece no ponto exato de maturação das uvas, medido rigorosamente pelo nosso enólogo.</p>
-                    <p>Todo o processo é feito de forma <strong>100% manual</strong> durante as primeiras horas da manhã, garantindo que as uvas cheguem frescas, intactas e perfeitas para o consumo e produção de derivados.</p>
+    <section id="colheita" class="section-padding bg-light">
+        <div class="container grid-2 de-lado">
+            <div class="image-placeholder bg-colheita">
+                <span>🧺 Seleção Manual Rigorosa</span>
+            </div>
+            <div class="text-content">
+                <span class="subtitle">A SAFRA</span>
+                <h2>A Magia da Colheita</h2>
+                <p>A colheita na nossa fazenda é um evento sagrado. Ela acontece no momento exato de maturação do fruto, medido pelo equilíbrio perfeito entre acidez e doçura (grau Brix).</p>
+                <p>Todo o processo é feito **manualmente** pelas mãos de nossa equipe experiente, evitando danos aos cachos e garantindo que apenas as melhores uvas cheguem até você.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="vendas" class="section-padding">
+        <div class="container center-text">
+            <span class="subtitle">PRODUTOS</span>
+            <h2>Direto da Fazenda</h2>
+            <p class="section-desc">Escolha suas variedades favoritas e leve o frescor do campo para sua casa.</p>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="prod-img bg-uva-niagara">🍇</div>
+                    <h3>Uva Niagara Rosada</h3>
+                    <p>Doce, aromática e perfeita para o consumo in natura. A queridinha das mesas brasileiras.</p>
+                    <span class="price">R$ 12,00 / kg</span>
+                    <button class="btn-buy" onclick="comprar('Niagara Rosada')">Encomendar</button>
                 </div>
-                <div class="image-placeholder bg-colheita"></div>
+                <div class="product-card">
+                    <div class="prod-img bg-uva-italia">🟢</div>
+                    <h3>Uva Itália Premium</h3>
+                    <p>Cachos grandes, bagos crocantes e sabor suave. Excelente durabilidade e presença.</p>
+                    <span class="price">R$ 15,50 / kg</span>
+                    <button class="btn-buy" onclick="comprar('Itália Premium')">Encomendar</button>
+                </div>
+                <div class="product-card">
+                    <div class="prod-img bg-uva-vitoria">🍇</div>
+                    <h3>Uva Vitória (Sem Semente)</h3>
+                    <p>Negra, extremamente doce e sem sementes. A preferida das crianças e ideal para lanches.</p>
+                    <span class="price">R$ 18,00 / kg</span>
+                    <button class="btn-buy" onclick="comprar('Vitória sem Semente')">Encomendar</button>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="vendas" class="container">
-        <h2>Nossos Produtos & Vendas</h2>
-        <p class="subtitle">Selecione a quantidade para simular seu pedido de caixas de 5kg:</p>
-        
-        <div class="produtos-grid">
-            <div class="card">
-                <h3>Uva Niágara</h3>
-                <p>Doce, de mesa, aroma inconfundível.</p>
-                <span class="preco">R$ 45,00 / caixa</span>
-                <button class="btn-comprar" onclick="adicionarAoCarrinho('Uva Niágara', 45)">Adicionar</button>
+    <section id="contato" class="section-padding bg-dark text-white">
+        <div class="container grid-2">
+            <div>
+                <h2>Venha Nos Visitar</h2>
+                <p>Agende uma visita guiada para conhecer nossos parreirais e participar da colheita ou faça um pedido em grande escala.</p>
+                <ul class="contact-info">
+                    <li>📍 Rodovia dos Parreirais, Km 45 - Bento Gonçalves/RS</li>
+                    <li>📞 (54) 99999-8888</li>
+                    <li>✉️ contato@villadasvideiras.com.br</li>
+                </ul>
             </div>
-            <div class="card">
-                <h3>Uva Thompson (Sem Semente)</h3>
-                <p>Crocante, suave e perfeita para snacks.</p>
-                <span class="preco">R$ 60,00 / caixa</span>
-                <button class="btn-comprar" onclick="adicionarAoCarrinho('Uva Thompson', 60)">Adicionar</button>
-            </div>
-            <div class="card">
-                <h3>Uva Merlot (Vinífera)</h3>
-                <p>Ideal para a produção de sucos e vinhos finos.</p>
-                <span class="preco">R$ 75,00 / caixa</span>
-                <button class="btn-comprar" onclick="adicionarAoCarrinho('Uva Merlot', 75)">Adicionar</button>
-            </div>
-        </div>
-
-        <div class="carrinho-box">
-            <h3>Resumo do seu Pedido</h3>
-            <ul id="itens-carrinho">
-                <li class="vazio">Nenhum item selecionado.</li>
-            </ul>
-            <p><strong>Total: R$ <span id="total-preco">0,00</span></strong></p>
-            <button id="btn-finalizar" class="btn" onclick="finalizarPedido()">Enviar Pedido via WhatsApp</button>
+            <form id="contact-form" onsubmit="enviarFormulario(event)">
+                <input type="text" placeholder="Seu Nome" required>
+                <input type="email" placeholder="Seu E-mail" required>
+                <textarea placeholder="Sua Mensagem ou Pedido" rows="4" required></textarea>
+                <button type="submit" class="btn-primary">Enviar Mensagem</button>
+            </form>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Fazenda Videira D'Ouro. Todos os direitos reservados.</p>
+        <p>&copy; 2026 Fazenda Villa das Videiras. Todos os direitos reservados.</p>
     </footer>
 
     <script src="script.js"></script>
