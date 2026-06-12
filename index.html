@@ -1,127 +1,294 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Fazenda Villa das Videiras | Cultivo de Uvas Premium</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        /* Estilos básicos para o carrinho */
+        #carrinho {
+            display: none;
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            width: 320px;
+            max-height: 70vh;
+            overflow-y: auto;
+            background: #fff;
+            border: 1px solid #ccc;
+            padding: 15px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            border-radius: 8px;
+        }
+        #carrinho h3 {
+            margin-top: 0;
+        }
+        #carrinho div.item {
+            margin-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 8px;
+        }
+        #carrinho button {
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        #btn-abrir-carrinho {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 12px 18px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+        /* Estilo para mensagem de sucesso do formulário */
+        #msg-sucesso {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+    </style>
 </head>
 <body>
 
-    <header>
-        <div class="container navbar">
-            <div class="logo">
-                🍇 <span>Villa das Videiras</span>
-            </div>
-            <nav>
-                <ul class="nav-links" id="nav-links">
-                    <li><a href="#home">Início</a></li>
-                    <li><a href="#plantacao">Plantação</a></li>
-                    <li><a href="#colheita">Colheita</a></li>
-                    <li><a href="#vendas">Nossas Uvas</a></li>
-                    <li><a href="#contato" class="btn-contato">Contato</a></li>
-                </ul>
-                <div class="menu-toggle" id="mobile-menu">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </nav>
+<header>
+    <div class="container navbar">
+        <div class="logo">
+            🍇 <span>Villa das Videiras</span>
         </div>
-    </header>
+        <nav>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#plantacao">Plantação</a></li>
+                <li><a href="#colheita">Colheita</a></li>
+                <li><a href="#vendas">Nossas Uvas</a></li>
+                <li><a href="#contato" class="btn-contato">Contato</a></li>
+            </ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </div>
+</header>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Do Nosso Sol para a Sua Mesa</h1>
-            <p>Cultivando com amor, colhendo com tradição. Conheça as uvas mais doces e selecionadas da região.</p>
-            <a href="#vendas" class="btn-primary">Ver Produtos</a>
+<section id="home" class="hero">
+    <div class="hero-content">
+        <h1>Do Nosso Sol para a Sua Mesa</h1>
+        <p>Cultivando com amor, colhendo com tradição. Conheça as uvas mais doces e selecionadas da região.</p>
+        <a href="#vendas" class="btn-primary">Ver Produtos</a>
+    </div>
+</section>
+
+<section id="plantacao" class="section-padding">
+    <div class="container grid-2">
+        <div class="text-content">
+            <span class="subtitle">O CULTIVO</span>
+            <h2>Nossa Plantação, Nosso Orgulho</h2>
+            <p>Na Villa das Videiras, combinamos a riqueza do solo com técnicas de agricultura sustentável. Cuidamos de cada videira individualmente, garantindo o controle ideal de irrigação e exposição solar para que os frutos desenvolvam seu sabor máximo.</p>
+            <p>Cultivamos variedades finas de mesa e uvas destinadas à produção dos melhores vinhos e sucos artesanais.</p>
         </div>
-    </section>
+        <div class="image-placeholder bg-plantacao">
+            <span>🌱 Solo Rico & Sustentabilidade</span>
+        </div>
+    </div>
+</section>
 
-    <section id="plantacao" class="section-padding">
-        <div class="container grid-2">
-            <div class="text-content">
-                <span class="subtitle">O CULTIVO</span>
-                <h2>Nossa Plantação, Nosso Orgulho</h2>
-                <p>Na Villa das Videiras, combinamos a riqueza do solo com técnicas de agricultura sustentável. Cuidamos de cada videira individualmente, garantindo o controle ideal de irrigação e exposição solar para que os frutos desenvolvam seu sabor máximo.</p>
-                <p>Cultivamos variedades finas de mesa e uvas destinadas à produção dos melhores vinhos e sucos artesanais.</p>
+<section id="colheita" class="section-padding bg-light">
+    <div class="container grid-2 de-lado">
+        <div class="image-placeholder bg-colheita">
+            <span>🧺 Seleção Manual Rigorosa</span>
+        </div>
+        <div class="text-content">
+            <span class="subtitle">A SAFRA</span>
+            <h2>A Magia da Colheita</h2>
+            <p>A colheita na nossa fazenda é um evento sagrado. Ela acontece no momento exato de maturação do fruto, medido pelo equilíbrio perfeito entre acidez e doçura (grau Brix).</p>
+            <p>Todo o processo é feito <strong>manualmente</strong> pelas mãos de nossa equipe experiente, evitando danos aos cachos e garantindo que apenas as melhores uvas cheguem até você.</p>
+        </div>
+    </div>
+</section>
+
+<section id="vendas" class="section-padding">
+    <div class="container center-text">
+        <span class="subtitle">PRODUTOS</span>
+        <h2>Direto da Fazenda</h2>
+        <p class="section-desc">Escolha suas variedades favoritas e leve o frescor do campo para sua casa.</p>
+        
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="prod-img bg-uva-niagara">🍇</div>
+                <h3>Uva Niagara Rosada</h3>
+                <p>Doce, aromática e perfeita para o consumo in natura. A queridinha das mesas brasileiras.</p>
+                <span class="price">R$ 12,00 / kg</span>
+                <button class="btn-buy" onclick="adicionarAoCarrinho('Uva Niagara Rosada', 12.00)">Encomendar</button>
             </div>
-            <div class="image-placeholder bg-plantacao">
-                <span>🌱 Solo Rico & Sustentabilidade</span>
+            <div class="product-card">
+                <div class="prod-img bg-uva-italia">🟢</div>
+                <h3>Uva Itália Premium</h3>
+                <p>Cachos grandes, bagos crocantes e sabor suave. Excelente durabilidade e presença.</p>
+                <span class="price">R$ 15,50 / kg</span>
+                <button class="btn-buy" onclick="adicionarAoCarrinho('Uva Itália Premium', 15.50)">Encomendar</button>
+            </div>
+            <div class="product-card">
+                <div class="prod-img bg-uva-vitoria">🍇</div>
+                <h3>Uva Vitória (Sem Semente)</h3>
+                <p>Negra, extremamente doce e sem sementes. A preferida das crianças e ideal para lanches.</p>
+                <span class="price">R$ 18,00 / kg</span>
+                <button class="btn-buy" onclick="adicionarAoCarrinho('Uva Vitória (Sem Semente)', 18.00)">Encomendar</button>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="colheita" class="section-padding bg-light">
-        <div class="container grid-2 de-lado">
-            <div class="image-placeholder bg-colheita">
-                <span>🧺 Seleção Manual Rigorosa</span>
-            </div>
-            <div class="text-content">
-                <span class="subtitle">A SAFRA</span>
-                <h2>A Magia da Colheita</h2>
-                <p>A colheita na nossa fazenda é um evento sagrado. Ela acontece no momento exato de maturação do fruto, medido pelo equilíbrio perfeito entre acidez e doçura (grau Brix).</p>
-                <p>Todo o processo é feito **manualmente** pelas mãos de nossa equipe experiente, evitando danos aos cachos e garantindo que apenas as melhores uvas cheguem até você.</p>
-            </div>
+<!-- Carrinho de Compras -->
+<section id="carrinho">
+    <h3>Carrinho de Compras</h3>
+    <div id="itens-carrinho"></div>
+    <p><strong>Total: R$ <span id="total-carrinho">0.00</span></strong></p>
+    <button onclick="fecharCarrinho()">Fechar Carrinho</button>
+    <button onclick="finalizarCompra()">Finalizar Compra</button>
+</section>
+
+<!-- Botão para abrir o carrinho -->
+<button id="btn-abrir-carrinho" title="Ver Carrinho 🛒">🛒 Ver Carrinho</button>
+
+<section id="contato" class="section-padding bg-dark text-white">
+    <div class="container grid-2">
+        <div>
+            <h2>Venha Nos Visitar</h2>
+            <p>Agende uma visita guiada para conhecer nossos parreirais e participar da colheita ou faça um pedido em grande escala.</p>
+            <ul class="contact-info">
+                <li>📍 Rodovia dos Parreirais, Km 45 - Bento Gonçalves/RS</li>
+                <li>📞 (43) 99669-8504</li>
+                <li>✉️ p.souza29@escola.pr.gov.br</li>
+            </ul>
         </div>
-    </section>
+        <form id="contact-form" onsubmit="enviarFormulario(event)">
+            <input type="text" id="nome" placeholder="Seu Nome" required>
+            <input type="email" id="email" placeholder="Seu E-mail" required>
+            <textarea id="mensagem" placeholder="Sua Mensagem ou Pedido" rows="4" required></textarea>
+            <button type="submit" class="btn-primary">Enviar Mensagem</button>
+            <div id="msg-sucesso"></div>
+        </form>
+    </div>
+</section>
 
-    <section id="vendas" class="section-padding">
-        <div class="container center-text">
-            <span class="subtitle">PRODUTOS</span>
-            <h2>Direto da Fazenda</h2>
-            <p class="section-desc">Escolha suas variedades favoritas e leve o frescor do campo para sua casa.</p>
-            
-            <div class="products-grid">
-                <div class="product-card">
-                    <div class="prod-img bg-uva-niagara">🍇</div>
-                    <h3>Uva Niagara Rosada</h3>
-                    <p>Doce, aromática e perfeita para o consumo in natura. A queridinha das mesas brasileiras.</p>
-                    <span class="price">R$ 12,00 / kg</span>
-                    <button class="btn-buy" onclick="comprar('Niagara Rosada')">Encomendar</button>
-                </div>
-                <div class="product-card">
-                    <div class="prod-img bg-uva-italia">🟢</div>
-                    <h3>Uva Itália Premium</h3>
-                    <p>Cachos grandes, bagos crocantes e sabor suave. Excelente durabilidade e presença.</p>
-                    <span class="price">R$ 15,50 / kg</span>
-                    <button class="btn-buy" onclick="comprar('Itália Premium')">Encomendar</button>
-                </div>
-                <div class="product-card">
-                    <div class="prod-img bg-uva-vitoria">🍇</div>
-                    <h3>Uva Vitória (Sem Semente)</h3>
-                    <p>Negra, extremamente doce e sem sementes. A preferida das crianças e ideal para lanches.</p>
-                    <span class="price">R$ 18,00 / kg</span>
-                    <button class="btn-buy" onclick="comprar('Vitória sem Semente')">Encomendar</button>
-                </div>
-            </div>
-        </div>
-    </section>
+<footer>
+    <p>&copy; 2026 Fazenda Villa das Videiras. Todos os direitos reservados.</p>
+</footer>
 
-    <section id="contato" class="section-padding bg-dark text-white">
-        <div class="container grid-2">
-            <div>
-                <h2>Venha Nos Visitar</h2>
-                <p>Agende uma visita guiada para conhecer nossos parreirais e participar da colheita ou faça um pedido em grande escala.</p>
-                <ul class="contact-info">
-                    <li>📍 Rodovia dos Parreirais, Km 45 - Bento Gonçalves/RS</li>
-                    <li>📞 (43) 99669-8504</li>
-                    <li>✉️ p.souza29@escola.pr.gov.br</li>
-                </ul>
-            </div>
-            <form id="contact-form" onsubmit="enviarFormulario(event)">
-                <input type="text" placeholder="Seu Nome" required>
-                <input type="email" placeholder="Seu E-mail" required>
-                <textarea placeholder="Sua Mensagem ou Pedido" rows="4" required></textarea>
-                <button type="submit" class="btn-primary">Enviar Mensagem</button>
-            </form>
-        </div>
-    </section>
+<script>
+    // Controle do carrinho
+    const carrinho = [];
 
-    <footer>
-        <p>&copy; 2026 Fazenda Villa das Videiras. Todos os direitos reservados.</p>
-    </footer>
+    function adicionarAoCarrinho(nome, preco) {
+        const item = carrinho.find(i => i.nome === nome);
+        if (item) {
+            item.quantidade++;
+        } else {
+            carrinho.push({ nome, preco, quantidade: 1 });
+        }
+        alert(`Produto "${nome}" adicionado ao carrinho.`);
+        atualizarCarrinho();
+    }
 
-    <script src="script.js"></script>
+    function atualizarCarrinho() {
+        const container = document.getElementById('itens-carrinho');
+        container.innerHTML = '';
+
+        if (carrinho.length === 0) {
+            container.innerHTML = '<p>Seu carrinho está vazio.</p>';
+            document.getElementById('total-carrinho').textContent = '0.00';
+            return;
+        }
+
+        let total = 0;
+
+        carrinho.forEach((item, index) => {
+            const subtotal = item.preco * item.quantidade;
+            total += subtotal;
+
+            const div = document.createElement('div');
+            div.className = 'item';
+            div.innerHTML = `
+                <strong>${item.nome}</strong> - R$ ${item.preco.toFixed(2)} x ${item.quantidade} = R$ ${subtotal.toFixed(2)}
+                <button onclick="removerItem(${index})">Remover</button>
+            `;
+            container.appendChild(div);
+        });
+
+        document.getElementById('total-carrinho').textContent = total.toFixed(2);
+    }
+
+    function removerItem(index) {
+        carrinho.splice(index, 1);
+        atualizarCarrinho();
+    }
+
+    function abrirCarrinho() {
+        document.getElementById('carrinho').style.display = 'block';
+        document.getElementById('btn-abrir-carrinho').style.display = 'none';
+        atualizarCarrinho();
+    }
+
+    function fecharCarrinho() {
+        document.getElementById('carrinho').style.display = 'none';
+        document.getElementById('btn-abrir-carrinho').style.display = 'block';
+    }
+
+    function finalizarCompra() {
+        if (carrinho.length === 0) {
+            alert('Seu carrinho está vazio.');
+            return;
+        }
+        let mensagem = 'Obrigado pela compra! Você adquiriu:\n';
+        carrinho.forEach(item => {
+            mensagem += `- ${item.quantidade} kg de ${item.nome}\n`;
+        });
+        alert(mensagem);
+        carrinho.length = 0; // esvazia o carrinho
+        fecharCarrinho();
+    }
+
+    document.getElementById('btn-abrir-carrinho').addEventListener('click', abrirCarrinho);
+
+    // Simulação de envio do formulário de contato
+    function enviarFormulario(event) {
+        event.preventDefault();
+
+        const nome = document.getElementById('nome').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const mensagem = document.getElementById('mensagem').value.trim();
+
+        if (!nome || !email || !mensagem) {
+            alert('Por favor, preencha todos os campos.');
+            return;
+        }
+
+        // Aqui você precisaria integrar com backend ou serviço de email para enviar a mensagem.
+        // Como não temos backend, vamos simular o envio com um alerta e limpar o formulário.
+
+        // Simula envio
+        setTimeout(() => {
+            document.getElementById('msg-sucesso').style.display = 'block';
+            document.getElementById('msg-sucesso').textContent = 'Mensagem enviada com sucesso! Entraremos em contato pelo e-mail informado.';
+            document.getElementById('contact-form').reset();
+        }, 500);
+    }
+</script>
+
 </body>
 </html>
+Explicações importantes:z
