@@ -49,9 +49,27 @@ header {
 }
 
 .logo {
+    display: flex;
+    align-items: center;
     font-size: 1.5rem;
     font-weight: bold;
     color: var(--primary-color);
+}
+
+.logo-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo-img {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid var(--secondary-color);
 }
 
 .nav-links {
@@ -109,6 +127,14 @@ header {
     text-align: center;
     color: white;
     padding-top: 80px;
+}
+
+.hero-content {
+    background: rgba(0, 0, 0, 0.45);
+    padding: 30px 35px;
+    border-radius: 18px;
+    max-width: 720px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
 }
 
 .hero-content h1 {
