@@ -1,7 +1,7 @@
 // Seleção de elementos do Menu Mobile
 const mobileMenu = document.getElementById('mobile-menu');
 const navLinks = document.getElementById('nav-links');
-
+//A lógica foi gerada com auxílio de IA.
 // Alternar classe ativa ao clicar no ícone de hambúrguer
 mobileMenu.addEventListener('click', () => {
     mobileMenu.classList.toggle('active');
